@@ -1,0 +1,171 @@
+{
+  "period": "2010-12 to 2011-11",
+  "gross_sales": 10254959,
+  "returns_value": 475966,
+  "return_rate_pct": 4.6,
+  "orders": 19776,
+  "aov": 518.56,
+  "customers": 4334,
+  "repeat_rate_pct": 65.3,
+  "uk_share_pct": 85.1,
+  "nov_vs_jan_sales_growth_pct": 116.7,
+  "peak_month": "2011-11",
+  "monthly": [
+    {
+      "month": "2010-12",
+      "net_sales": 776317.5,
+      "orders": 1551,
+      "aov": 500.53,
+      "active_customers": 884,
+      "new_customers": 884
+    },
+    {
+      "month": "2011-01",
+      "net_sales": 670639.46,
+      "orders": 1081,
+      "aov": 620.39,
+      "active_customers": 739,
+      "new_customers": 416
+    },
+    {
+      "month": "2011-02",
+      "net_sales": 508081.54,
+      "orders": 1093,
+      "aov": 464.85,
+      "active_customers": 757,
+      "new_customers": 380
+    },
+    {
+      "month": "2011-03",
+      "net_sales": 690591.84,
+      "orders": 1440,
+      "aov": 479.58,
+      "active_customers": 973,
+      "new_customers": 452
+    },
+    {
+      "month": "2011-04",
+      "net_sales": 515869.66,
+      "orders": 1235,
+      "aov": 417.71,
+      "active_customers": 853,
+      "new_customers": 300
+    },
+    {
+      "month": "2011-05",
+      "net_sales": 740472.33,
+      "orders": 1668,
+      "aov": 443.93,
+      "active_customers": 1054,
+      "new_customers": 284
+    },
+    {
+      "month": "2011-06",
+      "net_sales": 738233.99,
+      "orders": 1525,
+      "aov": 484.09,
+      "active_customers": 990,
+      "new_customers": 242
+    },
+    {
+      "month": "2011-07",
+      "net_sales": 688802.67,
+      "orders": 1452,
+      "aov": 474.38,
+      "active_customers": 946,
+      "new_customers": 187
+    },
+    {
+      "month": "2011-08",
+      "net_sales": 724708.16,
+      "orders": 1340,
+      "aov": 540.83,
+      "active_customers": 933,
+      "new_customers": 169
+    },
+    {
+      "month": "2011-09",
+      "net_sales": 1029245.38,
+      "orders": 1819,
+      "aov": 565.83,
+      "active_customers": 1259,
+      "new_customers": 299
+    },
+    {
+      "month": "2011-10",
+      "net_sales": 1104030.92,
+      "orders": 2005,
+      "aov": 550.64,
+      "active_customers": 1361,
+      "new_customers": 357
+    },
+    {
+      "month": "2011-11",
+      "net_sales": 1453265.98,
+      "orders": 2751,
+      "aov": 528.27,
+      "active_customers": 1660,
+      "new_customers": 323
+    }
+  ],
+  "top_country": [
+    {
+      "Country": "United Kingdom",
+      "sales": 8726607.0
+    },
+    {
+      "Country": "Netherlands",
+      "sales": 283889.0
+    },
+    {
+      "Country": "EIRE",
+      "sales": 276091.0
+    },
+    {
+      "Country": "Germany",
+      "sales": 205381.0
+    },
+    {
+      "Country": "France",
+      "sales": 184679.0
+    },
+    {
+      "Country": "Australia",
+      "sales": 138104.0
+    }
+  ],
+  "top_products": [
+    {
+      "Description": "REGENCY CAKESTAND 3 TIER",
+      "sales": 174157.0
+    },
+    {
+      "Description": "PAPER CRAFT , LITTLE BIRDIE",
+      "sales": 168470.0
+    },
+    {
+      "Description": "WHITE HANGING HEART T-LIGHT HOLDER",
+      "sales": 106237.0
+    },
+    {
+      "Description": "PARTY BUNTING",
+      "sales": 99445.0
+    },
+    {
+      "Description": "JUMBO BAG RED RETROSPOT",
+      "sales": 94160.0
+    },
+    {
+      "Description": "MEDIUM CERAMIC TOP STORAGE JAR",
+      "sales": 81701.0
+    },
+    {
+      "Description": "RABBIT NIGHT LIGHT",
+      "sales": 66870.0
+    },
+    {
+      "Description": "PAPER CHAIN KIT 50'S CHRISTMAS ",
+      "sales": 64876.0
+    }
+  ]
+}
