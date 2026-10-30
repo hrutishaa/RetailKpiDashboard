@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Retail KPI Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#f5f6f8;color:#1d2433}
+header{background:#1d2433;color:#fff;padding:20px 32px}header h1{margin:0;font-size:22px}header p{margin:4px 0 0;opacity:.75;font-size:14px}
+main{max-width:1150px;margin:24px auto;padding:0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card .v{font-size:24px;font-weight:700}.card .l{font-size:12px;color:#667;text-transform:uppercase;letter-spacing:.4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.wide{grid-column:1/-1}
+@media(max-width:800px){.grid{grid-template-columns:1fr}}
+footer{font-size:12px;color:#667;margin:24px 0}a{color:#2a62c9}
+</style></head><body>
+<header><h1>Online Retail — KPI Dashboard</h1><p id="sub"></p></header>
+<main>
+<div class="cards" id="cards"></div>
+<div class="grid">
+<div class="card wide"><canvas id="sales" height="90"></canvas></div>
+<div class="card"><canvas id="cust"></canvas></div>
+<div class="card"><canvas id="aov"></canvas></div>
+<div class="card"><canvas id="country"></canvas></div>
+<div class="card"><canvas id="prod"></canvas></div>
+</div>
+<footer>Data: <a href="https://archive.ics.uci.edu/dataset/352/online+retail">UCI Online Retail</a> (Chen, 2015), UK online gift retailer, Dec 2010 – Dec 2011. Metric definitions: <a href="https://github.com/hrutishaa/RetailKpiDashboard/blob/main/docs/metrics.md">metrics.md</a>. Built from SQLite with Python.</footer>
+</main>
+<script>
+const D=__DATA__;const f=n=>'£'+Math.round(n).toLocaleString();
+document.getElementById('sub').textContent='1 Dec 2010 – 9 Dec 2011 · totals use the full period; monthly trends stop at Nov 2011 because Dec 2011 is partial';
+const cards=[['Gross sales',f(D.gross_sales)],['Orders',D.orders.toLocaleString()],['Avg order value',f(D.aov)],['Customers',D.customers.toLocaleString()],['Repeat customer rate',D.repeat_rate_pct+'%'],['Return rate (value)',D.return_rate_pct+'%'],['UK share of sales',D.uk_share_pct+'%'],['Nov vs Jan 2011 sales',(D.nov_vs_jan_sales_growth_pct>0?'+':'')+D.nov_vs_jan_sales_growth_pct+'%']];
+document.getElementById('cards').innerHTML=cards.map(c=>`<div class="card"><div class="l">${c[0]}</div><div class="v">${c[1]}</div></div>`).join('');
+const m=D.monthly.map(x=>x.month);
+new Chart(sales,{type:'bar',data:{labels:m,datasets:[{label:'Net sales (£)',data:D.monthly.map(x=>x.net_sales),backgroundColor:'#2a62c9'}]},options:{plugins:{title:{display:true,text:'Monthly net sales'}}}});
+new Chart(cust,{type:'line',data:{labels:m,datasets:[{label:'Active customers',data:D.monthly.map(x=>x.active_customers),borderColor:'#2a62c9'},{label:'New customers',data:D.monthly.map(x=>x.new_customers),borderColor:'#e07a2f'}]},options:{plugins:{title:{display:true,text:'Active vs new customers'}}}});
+new Chart(aov,{type:'line',data:{labels:m,datasets:[{label:'AOV (£)',data:D.monthly.map(x=>x.aov),borderColor:'#2f9e6e'}]},options:{plugins:{title:{display:true,text:'Average order value'}}}});
+new Chart(country,{type:'bar',data:{labels:D.top_country.map(x=>x.Country),datasets:[{label:'Sales (£)',data:D.top_country.map(x=>x.sales),backgroundColor:'#7a5bd6'}]},options:{indexAxis:'y',plugins:{title:{display:true,text:'Top countries'}}}});
+new Chart(prod,{type:'bar',data:{labels:D.top_products.map(x=>x.Description.slice(0,28)),datasets:[{label:'Sales (£)',data:D.top_products.map(x=>x.sales),backgroundColor:'#c9532a'}]},options:{indexAxis:'y',plugins:{title:{display:true,text:'Top products'}}}});
+</script></body></html>
